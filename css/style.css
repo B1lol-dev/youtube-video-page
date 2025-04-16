@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
+
+img {
+  object-fit: cover;
+}
+
+.container {
+  margin: 0 auto;
+  padding-inline: 1rem;
+  max-width: 1900px;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+body {
+  background: #0f0f0f;
+}
+
+/* Header */
+
+header {
+  position: fixed;
+  width: 100%;
+  padding-block: 18px;
+
+  .container {
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .nav_left {
+        display: flex;
+        gap: calc(8px + 16px);
+      }
+
+      .nav_search {
+        display: flex;
+        gap: 1rem;
+
+        .search_input {
+          display: flex;
+          align-items: center;
+          position: relative;
+
+          input {
+            width: 540px;
+            height: 40px;
+            border-radius: 20px;
+            background: transparent;
+            border: 1px solid gray;
+            outline: none;
+            padding-left: 1rem;
+            font-size: 1rem;
+            color: white;
+
+            &:focus {
+              border: 1px solid aqua;
+            }
+          }
+
+          button {
+            position: absolute;
+            right: 0;
+            background: gray;
+            height: 100%;
+            width: 50px;
+            border-radius: 0 20px 20px 0;
+
+            svg {
+              transform: scale(0.6);
+            }
+          }
+        }
+
+        #nav_search_mic {
+          height: 40px;
+          background: gray;
+          border-radius: 50%;
+
+          svg {
+            transform: scale(0.7);
+          }
+        }
+      }
+
+      .nav_right {
+        display: flex;
+        gap: 1rem;
+
+        #nav_create {
+          background: gray;
+          height: 35px;
+          border-radius: 20px;
+          padding: 0 1rem;
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: white;
+        }
+
+        #nav_profile {
+          height: 35px;
+          border-radius: 50%;
+          display: flex;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

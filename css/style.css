@@ -52,6 +52,7 @@ header {
   position: fixed;
   width: 100%;
   padding-block: 18px;
+  background: var(--bg_pr);
 
   .container {
     nav {
@@ -64,7 +65,7 @@ header {
         width: 300px;
         position: fixed;
         left: 0;
-        top: 80px;
+        top: 75px;
         background: var(--bg_pr);
         transform: translateX(-100%);
         transition: 0.2s ease-out;
@@ -330,5 +331,107 @@ header {
         }
       }
     }
+  }
+}
+
+/* Main */
+
+main {
+  padding-top: 76px;
+
+  .container {
+    padding-inline: 3.9rem;
+    padding-top: 20px;
+
+    .main_video_wrapper {
+      iframe {
+        border-radius: 10px;
+      }
+
+      .main_video_title {
+        color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+      .main_video_controls {
+        margin-top: 1rem;
+        display: flex;
+
+        .channel_info {
+          display: flex;
+          gap: 10px;
+
+          img {
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+          }
+
+          div {
+            color: lightgray;
+
+            h3 {
+              color: white;
+              font-size: 1rem;
+              font-weight: 500;
+            }
+
+            p {
+              font-size: 0.8rem;
+            }
+          }
+
+          .subscribe_btn {
+            background: white;
+            padding-inline: 2rem;
+            border-radius: 20px;
+            font-size: 1rem;
+            margin-left: 1rem;
+
+            &.subscribed {
+              background: #202020;
+              color: white;
+              position: relative;
+
+              &::before {
+                content: "";
+                position: absolute;
+                height: calc(100% + 4px);
+                width: calc(100% + 4px);
+                background: conic-gradient(
+                  red,
+                  green,
+                  lime,
+                  blue,
+                  aqua,
+                  purple,
+                  orange,
+                  red
+                );
+                border-radius: inherit;
+                top: 50%;
+                left: 50%;
+                z-index: -1;
+                transform: translate(-50%, -50%);
+                animation: subscribe_anim 1s forwards;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* subscribe button animation */
+@keyframes subscribe_anim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

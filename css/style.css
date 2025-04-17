@@ -356,6 +356,8 @@ main {
       .main_video_controls {
         margin-top: 1rem;
         display: flex;
+        justify-content: space-between;
+        align-items: start;
 
         .channel_info {
           display: flex;
@@ -415,6 +417,59 @@ main {
                 transform: translate(-50%, -50%);
                 animation: subscribe_anim 1s forwards;
               }
+            }
+          }
+        }
+
+        .video_buttons {
+          display: flex;
+          gap: 0.5rem;
+
+          .likes {
+            display: flex;
+
+            button {
+              background: gray;
+              height: 40px;
+              display: flex;
+              color: white;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 1rem;
+              padding-inline: 0.5rem;
+              border-radius: 20px 0 0 20px;
+              padding-right: 1.5rem;
+
+              svg {
+                transform: scale(0.7) rotateX(180deg) rotateY(180deg) !important;
+                fill: white;
+              }
+
+              &:last-child {
+                border-radius: 0 20px 20px 0;
+                border-left: 1px solid white;
+
+                svg {
+                  transform: scale(0.7) !important;
+                }
+              }
+            }
+          }
+
+          #share_btn {
+            background: gray;
+            height: 40px;
+            display: flex;
+            color: white;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            padding-inline: 0.5rem;
+            border-radius: 20px;
+            padding-right: 1.5rem;
+
+            svg {
+              transform: scale(0.6) !important;
             }
           }
         }

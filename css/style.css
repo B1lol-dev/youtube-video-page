@@ -7,6 +7,7 @@
 
 :root {
   --bg_pr: #0f0f0f;
+  --yt_gray: #202020;
 }
 
 button {
@@ -111,7 +112,7 @@ header {
             height: 40px;
             border-radius: 20px;
             background: transparent;
-            border: 1px solid gray;
+            border: 1px solid var(--yt_gray);
             outline: none;
             padding-left: 1rem;
             font-size: 1rem;
@@ -125,7 +126,7 @@ header {
           button {
             position: absolute;
             right: 0;
-            background: gray;
+            background: var(--yt_gray);
             height: 100%;
             width: 50px;
             border-radius: 0 20px 20px 0;
@@ -138,7 +139,7 @@ header {
 
         #nav_search_mic {
           height: 40px;
-          background: gray;
+          background: var(--yt_gray);
           border-radius: 50%;
 
           svg {
@@ -150,7 +151,7 @@ header {
           position: fixed;
           height: 400px;
           width: 600px;
-          background: #202020;
+          background: var(--yt_gray);
           left: 50%;
           transform: translateX(-50%);
           color: white;
@@ -196,7 +197,7 @@ header {
         gap: 1rem;
 
         #nav_create {
-          background: gray;
+          background: var(--yt_gray);
           height: 35px;
           border-radius: 20px;
           padding: 0 1rem;
@@ -207,7 +208,7 @@ header {
 
         .nav_create_modal {
           position: fixed;
-          background: gray;
+          background: var(--yt_gray);
           height: 100px;
           width: 200px;
           top: 60px;
@@ -230,7 +231,7 @@ header {
 
         .nav_bell_modal {
           position: fixed;
-          background: gray;
+          background: var(--yt_gray);
           height: 500px;
           width: 400px;
           top: 60px;
@@ -278,7 +279,7 @@ header {
 
         .nav_profile_modal {
           position: fixed;
-          background: gray;
+          background: var(--yt_gray);
           height: 700px;
           width: 300px;
           top: 60px;
@@ -370,7 +371,7 @@ main {
           }
 
           div {
-            color: lightgray;
+            color: gray;
 
             h3 {
               color: white;
@@ -391,7 +392,7 @@ main {
             margin-left: 1rem;
 
             &.subscribed {
-              background: #202020;
+              background: var(--yt_gray);
               color: white;
               position: relative;
 
@@ -429,7 +430,7 @@ main {
             display: flex;
 
             button {
-              background: gray;
+              background: var(--yt_gray);
               height: 40px;
               display: flex;
               color: white;
@@ -457,7 +458,7 @@ main {
           }
 
           #share_btn {
-            background: gray;
+            background: var(--yt_gray);
             height: 40px;
             display: flex;
             color: white;
@@ -470,6 +471,60 @@ main {
 
             svg {
               transform: scale(0.6) !important;
+            }
+          }
+
+          .share_modal {
+            position: fixed;
+            background: var(--yt_gray);
+            height: 500px;
+            width: 550px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 1rem;
+            display: none;
+
+            .share_modal_close {
+              color: white;
+              position: absolute;
+              top: 1rem;
+              right: 1rem;
+              font-size: 1.2rem;
+            }
+
+            .share_modal_post {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 1rem;
+              h2 {
+                color: white;
+                text-align: center;
+                font-weight: 400;
+                font-size: 1.3rem;
+              }
+
+              .share_modal_new_post {
+                background: white;
+                padding: 10px 30px;
+                border-radius: 20px;
+
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
+
+              p {
+                color: gray;
+                font-size: 0.8rem;
+              }
+            }
+
+            hr {
+              width: 100%;
+              margin-block: 1rem;
             }
           }
         }

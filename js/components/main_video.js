@@ -136,4 +136,41 @@ export const main_video = (toggleOverlay) => {
       isDisliked = false;
     }
   });
+
+  // share
+  const share_btn = document.getElementById("share_btn");
+  const share_modal = document.querySelector(".share_modal");
+  const share_modal_close = document.querySelector(".share_modal_close");
+  let isShareOpen = false;
+  share_btn.addEventListener("click", () => {
+    if (isShareOpen) {
+      share_modal.style.display = "";
+      isShareOpen = false;
+      toggleOverlay();
+    } else {
+      share_modal.style.display = "block";
+      isShareOpen = true;
+      toggleOverlay();
+    }
+  });
+  share_modal_close.addEventListener("click", () => {
+    share_modal.style.display = "";
+    isShareOpen = false;
+    toggleOverlay();
+  });
+
+  // overlay
+  document.addEventListener("click", (e) => {
+    // share
+    if (
+      e.target !== share_btn &&
+      e.target !== share_modal_close &&
+      e.target !== share_modal &&
+      isShareOpen
+    ) {
+      share_modal.style.display = "";
+      isShareOpen = false;
+      toggleOverlay();
+    }
+  });
 };

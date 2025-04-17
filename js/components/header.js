@@ -53,6 +53,20 @@ export const header = (toggleOverlay) => {
   });
 
   const nav_bell = document.getElementById("nav_bell");
+  const nav_bell_modal = document.querySelector(".nav_bell_modal");
+  let isBellOpen = false;
+  nav_bell.addEventListener("click", () => {
+    if (isBellOpen) {
+      nav_bell_modal.style.display = "";
+      isBellOpen = false;
+      toggleOverlay();
+    } else {
+      nav_bell_modal.style.display = "block";
+      isBellOpen = true;
+      toggleOverlay();
+    }
+  });
+
   const nav_profile = document.getElementById("nav_profile");
 
   // overlay
@@ -84,6 +98,13 @@ export const header = (toggleOverlay) => {
     ) {
       nav_create_modal.style.display = "";
       isCreateOpen = false;
+      toggleOverlay();
+    }
+
+    // bell
+    if (e.target !== nav_bell && e.target !== nav_bell_modal && isBellOpen) {
+      nav_bell_modal.style.display = "";
+      isBellOpen = false;
       toggleOverlay();
     }
   });

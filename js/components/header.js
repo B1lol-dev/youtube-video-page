@@ -68,6 +68,19 @@ export const header = (toggleOverlay) => {
   });
 
   const nav_profile = document.getElementById("nav_profile");
+  const nav_profile_modal = document.querySelector(".nav_profile_modal");
+  let isProfileOpen = false;
+  nav_profile.addEventListener("click", () => {
+    if (isProfileOpen) {
+      nav_profile_modal.style.display = "";
+      isProfileOpen = false;
+      toggleOverlay();
+    } else {
+      nav_profile_modal.style.display = "block";
+      isProfileOpen = true;
+      toggleOverlay();
+    }
+  });
 
   // overlay
   document.addEventListener("click", (e) => {
@@ -105,6 +118,17 @@ export const header = (toggleOverlay) => {
     if (e.target !== nav_bell && e.target !== nav_bell_modal && isBellOpen) {
       nav_bell_modal.style.display = "";
       isBellOpen = false;
+      toggleOverlay();
+    }
+
+    // profile
+    if (
+      e.target !== nav_profile &&
+      e.target !== nav_profile_modal &&
+      isProfileOpen
+    ) {
+      nav_profile_modal.style.display = "";
+      isProfileOpen = false;
       toggleOverlay();
     }
   });

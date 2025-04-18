@@ -159,6 +159,44 @@ export const main_video = (toggleOverlay) => {
     toggleOverlay();
   });
 
+  // more
+  const more_btn = document.getElementById("more_btn");
+  const more_btn_modal = document.querySelector(".more_btn_modal");
+  let isMoreOpen = false;
+  more_btn.addEventListener("click", () => {
+    if (isMoreOpen) {
+      more_btn_modal.style.display = "";
+      isMoreOpen = false;
+      toggleOverlay();
+    } else {
+      more_btn_modal.style.display = "flex";
+      isMoreOpen = true;
+      toggleOverlay();
+    }
+  });
+
+  // save
+  const save_btn = document.getElementById("save_btn");
+  const save_modal = document.querySelector(".save_modal");
+  const save_modal_close = save_modal.children[1];
+  let isSaveOpen = false;
+  save_btn.addEventListener("click", () => {
+    if (isSaveOpen) {
+      save_modal.style.display = "";
+      isSaveOpen = false;
+      toggleOverlay();
+    } else {
+      save_modal.style.display = "block";
+      isSaveOpen = true;
+      toggleOverlay();
+    }
+  });
+  save_modal_close.addEventListener("click", () => {
+    save_modal.style.display = "";
+    isSaveOpen = false;
+    toggleOverlay();
+  });
+
   // overlay
   document.addEventListener("click", (e) => {
     // share
@@ -170,6 +208,25 @@ export const main_video = (toggleOverlay) => {
     ) {
       share_modal.style.display = "";
       isShareOpen = false;
+      toggleOverlay();
+    }
+
+    // more
+    if (e.target !== more_btn && e.target !== more_btn_modal && isMoreOpen) {
+      more_btn_modal.style.display = "";
+      isMoreOpen = false;
+      toggleOverlay();
+    }
+
+    // save
+    if (
+      e.target !== save_btn &&
+      e.target !== save_modal &&
+      e.target !== save_modal_close &&
+      isSaveOpen
+    ) {
+      save_modal.style.display = "";
+      isSaveOpen = false;
       toggleOverlay();
     }
   });

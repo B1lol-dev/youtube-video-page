@@ -686,7 +686,7 @@ main {
         }
       }
 
-      .video_list {
+      .video_list_wrapper {
         .shorts {
           padding-top: 2rem;
 
@@ -742,8 +742,44 @@ main {
 
         hr {
           width: 100%;
-          margin-block: 1.5rem;
+          margin-block: 1.5rem 0.5rem;
           color: #d3d3d35d;
+        }
+
+        .video_list {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 1rem;
+
+          .video_card {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 85%;
+
+            img {
+              border-radius: 10px;
+              max-width: 180px !important;
+            }
+
+            div {
+              h4 {
+                color: white;
+                font-size: 0.9rem;
+                font-weight: 500;
+              }
+
+              p {
+                margin-top: 5px;
+                color: gray;
+                font-size: 0.8rem;
+
+                &:last-child {
+                  margin-top: 0;
+                }
+              }
+            }
+          }
         }
       }
     }
